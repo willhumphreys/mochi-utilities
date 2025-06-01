@@ -32,10 +32,10 @@ for status in "${job_statuses[@]}"; do
   # Count and filter jobs that start with the specified prefix
   matching_jobs=()
   while read -r job_id job_name; do
-    if [[ "$job_name" == "$NAME_PREFIX"* ]]; then
-      matching_jobs+=("$job_id")
-      echo "Found matching job: $job_name (ID: $job_id)"
-    fi
+
+    matching_jobs+=("$job_id")
+    echo "Found matching job: $job_name (ID: $job_id)"
+
   done < <(echo "$job_list" | jq -r '.[] | .jobId + " " + .jobName')
 
   job_count=${#matching_jobs[@]}
