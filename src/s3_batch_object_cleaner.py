@@ -13,9 +13,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger()
 
-# Hard-coded configuration values
-#SYMBOL = "AAPL"  # Symbol to search for and delete
-SYMBOL = "C:XAUUSD"  # Symbol to search for and delete
+
 PROFILE_NAME = "mochi-admin"  # AWS profile to use
 MAX_CONCURRENCY = 8  # Maximum concurrent bucket operations
 MAX_KEYS = 1000  # Maximum keys per API call
